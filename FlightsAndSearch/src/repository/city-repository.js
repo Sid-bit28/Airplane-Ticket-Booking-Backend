@@ -17,6 +17,7 @@ class CityRepository {
           id: cityId,
         },
       });
+      return true;
     } catch (error) {
       throw { error };
     }
@@ -24,11 +25,7 @@ class CityRepository {
 
   async getCityById({ cityId }) {
     try {
-      const city = await City.findOne({
-        where: {
-          id: cityId,
-        },
-      });
+      const city = await City.findByPK(cityId);
       return city;
     } catch (error) {
       throw { error };
