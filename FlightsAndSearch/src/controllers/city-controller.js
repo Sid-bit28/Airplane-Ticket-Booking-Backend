@@ -6,7 +6,7 @@ const cityService = new CityService();
 const create = async (req, res) => {
   try {
     const city = await cityService.createCity(req.body);
-    return res.Status(201).json({
+    return res.status(201).json({
       data: city,
       success: true,
       message: 'Successfully created a city.',
@@ -86,7 +86,7 @@ const update = async (req, res) => {
   }
 };
 
-module.export = {
+module.exports = {
   create,
   destroy,
   get,
